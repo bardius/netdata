@@ -1,4 +1,50 @@
-# Getting Started with Create React App
+# Netdata test
+
+The test was implemented with create react app typescript template and MUI v4.x as component library.
+Focus has been given in the 4 layer architecture of the code and the selection of libraries utilised rather than the UI/UX design due to time constraints.
+
+## Folder Structure Outline
+
+Under source, you can find the source code separated as:
+
+- __mocks__: npm module mocks for jest
+- __tests__: unit test specification files (follows the same structure as the codebase)
+- components: presentational component with no or minimal logic and state
+- contexts: Context API and providers, that expose values to consumer via hooks, utilising the use-context-selector library for performance. All data and requests are orchestrated here including dependency inject of the relevant domain services
+- domain: Businesses logic in encapsulated in their respective folders following Clean Architecture principal and can be reused or utilised as vanilla typescript code
+  - Axios and SWR abstraction that provides a custom hook
+  - Coin domain service that handles any data fetching and transformation
+- pages: components that act as routes for react router (have provided a sample for lazy loader route component also)
+- theme: MUI theme
+- utils: vanilla typescript code that encapsulate reusable generic logic
+
+## Libraries
+
+A curated list of libraries has been added on top of CRA:
+
+- @visx/visx: for charts and data visualization 
+- axios: http client
+- date-fns: for date handling
+- ramda: for utilities
+- swr: for data fetching and caching capabilities
+- use-context-selector: to optimize the Context API state retrieval as slices
+- eslint & prettier: for code formatting and linting
+
+## Potential improvements
+
+Due to time constraints not all aspects of the application have been taken care of. 
+Most notable:
+
+- Proper UI/UX for eye sugar
+- Accessibility that passes WCAG AA, have added a couple of samples for srOnly data
+- Unit tests
+- Further, clean up of the chart code
+- HTML tile and meta management per page
+- Security related issues
+
+If any of these is a requirement, happy to provide it on follow-up commits.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
